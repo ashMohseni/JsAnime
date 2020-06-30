@@ -67,3 +67,7 @@ section{
   transform: translate(-20%, -70%);
   z-index: 3;
 }
+
+.headline::selection, .bg::selection {
+  background: #535050;
+}
