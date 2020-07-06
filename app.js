@@ -4,6 +4,7 @@ const slider = document.querySelector('.slider');
 const logo = document.querySelector('#logo');
 const menu = document.querySelector('.menu');
 const headline = document.querySelector('.headline');
+const headline2 = document.querySelector('#headline2');
 
 const tl = new TimelineMax();
 
@@ -74,7 +75,18 @@ new fullpage('#fullpage', {
   onLeave: function(origin, destination, direction){
     const tl2 = new TimelineMax();
 
-
+    if (destination.index === 0) {
+      tl2.fromTo(
+          headline,
+          1, {
+              opacity: 0,
+              x: 30
+          }, {
+              opacity: 1,
+              x: 0
+          }
+      );
+    }
 
     if (destination.index === 1) {
       tl2.fromTo(
@@ -96,7 +108,17 @@ new fullpage('#fullpage', {
               transform: "translate(10%)",
               ease: Power2.easeInOut
           }
-      )
+      ).fromTo(
+          headline2,
+          1, {
+              opacity: 0,
+              x: 30
+          }, {
+              opacity: 1,
+              x: 0
+          }
+      );
+
     }
 
 
